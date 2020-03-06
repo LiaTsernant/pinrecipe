@@ -11,23 +11,11 @@ body {
 header {
     flex: 0 0 auto;
 }
-
-.addRecipe {
-    margin: 30px;
-}
-
+ 
 main {
     flex: 1 0 auto;
 }
-
-#addBtn {
-    margin-right: 10px;
-}
-
-img {
-    object-fit: cover;
-}
-
+ 
 footer {
     width: 100%;
     flex: 0 0 auto;
@@ -37,23 +25,12 @@ footer {
     justify-content: center;
 }
 
-.backTop {
-    left: 0;
-    margin: 10px 30px 10px 80px;
-}
-
 .copyright {
     margin: 10px 50px 10px 0;
 }
 
-.jumbotron {
-    padding: 20px;
-    margin: 0;
-}
-
-.my-2 {
-    background-color: #343a40;
-    border-color: #343a40;
+i {
+    margin: 4px 5px;
 }
 
 a {
@@ -63,3 +40,15 @@ a {
 a:hover {
     color: white;
 }
+
+#link {
+    color: blue;
+}
+
+img {
+    max-width: 600px;
+    max-height: 600px;
+    object-fit: cover;
+}
+ 
+ 

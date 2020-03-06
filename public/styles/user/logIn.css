@@ -1,59 +1,41 @@
-html {
+html{
     height: 100%;
 }
 
-body {
+body{
+    width: 100%;
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-header {
+header{
     flex: 0 0 auto;
 }
-
-.addRecipe {
-    margin: 30px;
-}
-
+ 
 main {
     flex: 1 0 auto;
 }
 
-#addBtn {
-    margin-right: 10px;
-}
-
 img {
-    object-fit: cover;
+    width: 200px;
+    height: 200px;
+    /* border-radius: 50%; */
 }
-
-footer {
+ 
+footer{
     width: 100%;
     flex: 0 0 auto;
-    background-color: #343a40;
     color: white;
     display: flex;
     justify-content: center;
-}
+    background-color: #343a40;
 
-.backTop {
-    left: 0;
-    margin: 10px 30px 10px 80px;
+    margin-top: 20px;
 }
 
 .copyright {
     margin: 10px 50px 10px 0;
-}
-
-.jumbotron {
-    padding: 20px;
-    margin: 0;
-}
-
-.my-2 {
-    background-color: #343a40;
-    border-color: #343a40;
 }
 
 a {
@@ -62,4 +44,8 @@ a {
 
 a:hover {
     color: white;
+}
+
+input {
+    margin-bottom: 20px;
 }

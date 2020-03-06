@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinrecipe</title>
+
+  <!-- BOOTSTRAP CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <!-- MAIN CSS -->
+  <link rel="stylesheet" href="/styles/main.css">
+
+  <!-- CONNECT MAIN JS FILE -->
+  <script defer src="/scripts/main.js"></script>
+
+</head>
+
+
+<body>
+
+  <!-- NAVIGATION MENU -->
+  <header>
+    <div class="bg-dark collapse" id="navbarHeader">
+      <div class="container">
+          <div class="row nav justify-content-end">
+              <div class="col-sm-4 py-4">
+
+                <!-- UNAUTHORIZED USER -->
+                <div id="unauthorized">
+                  <!-- <h4 class="text-white nav justify-content-end mb-3">
+                    <a href="/">Main Page</a>
+                  </h4>
+
+                  <h4 class="text-white nav justify-content-end mb-3">
+                      <a href="/login" id="login">Login</a>
+                  </h4>
+
+                  <h4 class="text-white nav justify-content-end mb-3">
+                    <a href="/register" id="register">Create Account</a>
+                  </h4> -->
+                </div>
+
+                <!-- AUTHORIZED USER -->
+                <div id="authorized">
+                  <!-- <h4 class="text-white nav justify-content-end mb-3">
+                    <a href="/">Main Page</a>
+                  </h4>
+                  <h4 class="text-white nav justify-content-end mb-3">
+                    <a href="user/profile">Profile</a>
+                  </h4>
+                  <ul class="list-unstyled">
+                      <li class="nav-item nav justify-content-end"><a href="/breakfast" class="text-white">Breakfast</a>
+                      </li>
+                      <li class="nav-item nav justify-content-end"><a href="/lunch" class="text-white">Lunch</a></li>
+                      <li class="nav-item nav justify-content-end"><a href="/dinner" class="text-white">Dinner</a></li>
+                      <li class="nav-item nav justify-content-end"><a href="/dessert" class="text-white">Dessert</a></li>
+                      <li class="nav-item nav justify-content-end mt-2"><a id="logout" href="#"
+                              class="text-white font-weight-bold">Log Out</a></li>
+                  </ul> -->
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+    <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-end">
+            <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+    <!-- BOOTSTRAP MODAL FOR CREATE NEW RECIPE -->
+
+<div class="recipeModal modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new recipe</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="createRecipe">
+            <div class="form-group">
+                <label>Recipe name:</label>
+                <input id="recipeName" class="form-control col-form-label-sm" placeholder="Required">
+              </div>
+              <div class="form-group">
+                <label >Description:</label>
+                <input id="recipeDesc" class="form-control col-form-label-sm" placeholder="Required">
+              </div>
+              <div class="form-group">
+                <label>Ingredients:</label>
+                <input id="ingredients" class="form-control col-form-label-sm" placeholder="eg: butter, flour, milk">
+              </div>
+              <div class="form-group">
+                <label>Link to image:</label>
+                <input id="linkImg" class="form-control col-form-label-sm" placeholder="Required">
+              </div>
+              <div class="form-group">
+                <label>Link to cooking steps:</label>
+                <input id="linkMethod" class="form-control col-form-label-sm" placeholder="Required">
+              </div>
+              <div class="row">
+                <div class="col">
+                  <label>Cooking time (h,m)</label>
+                  <input id="cookingTime" type="text" class="form-control" placeholder="eg: 1h 40min">
+                </div>
+                <div class="col">
+                  <label>Calories per portion</label>
+                  <input id="calories" type="text" class="form-control" placeholder="eg: 300">
+                </div>
+              </div>
+            </br>
+              <p>This recipe is perfect for:</p>
+              <div class="form-group form-check">
+                <input name="categoryGroup[]" type="checkbox" class="form-check-input" value="breakfast">
+                <label class="form-check-label" for="exampleCheck1">Breakfast</label>
+              </div>
+              <div class="form-group form-check">
+                <input name="categoryGroup[]" type="checkbox" class="form-check-input" value="lunch">
+                <label class="form-check-label" for="exampleCheck1">Lunch</label>
+              </div>
+              <div class="form-group form-check">
+                <input name="categoryGroup[]" type="checkbox" class="form-check-input" value="dinner">
+                <label class="form-check-label" for="exampleCheck1">Dinner</label>
+              </div>
+              <div class="form-group form-check">
+                <input name="categoryGroup[]" type="checkbox" class="form-check-input" value="dessert">
+                <label class="form-check-label" for="exampleCheck1">Dessert</label>
+              </div>
+
+              <!-- FORM BUTTON -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button class="btn btn-primary">Add recipe</button>
+              </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <main role="main">
+    <!-- HERO SECTION -->
+    <section class="jumbotron text-center">
+      <div class="container">
+        <h1>Pinrecipe</h1>
+        <p class="lead text-muted">Pinrecipe is your cookbook. Browse for yummy inspiration and add your own recipes.
+        </p>
+
+         <!-- TOOLTIP FOR ADD RECIPE BUTTON -->
+        <span id="tooltip" class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Please login to add new recipes">
+
+        <!-- modal button -->
+        <button id="addRecipeBtn" type="button" class="btn btn-secondary my-2" data-toggle="modal" data-target="#exampleModal" data-toggle="tooltip">Add new recipe</button>
+        </span>
+      </div>
+    </section>
+
+
+    <!-- RECIPE CARDS SECTION -->
+    <div class="album py-5 bg-light">
+      <div class="container">
+        <div id="recipe" class="row">
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p class="backTop"><a href="#"> Back to top</a></p>
+    <p class="copyright">&copy; 2020 Pinrecipe</p>
+  </footer>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="/docs/4.4/assets/js/vendor/jquery.slim.min.js"><\/script>')</script>
+  <script src="/docs/4.4/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm"
+    crossorigin="anonymous"></script> -->
+
+
+  <!-- BOOTSTRAP JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
