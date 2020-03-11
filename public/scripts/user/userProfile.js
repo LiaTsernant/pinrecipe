@@ -1,7 +1,6 @@
 // If user is in the localStorage - take it
 let currentUser = JSON.parse(localStorage.getItem('currentUser'));
 
-
 let logoutBtn;
 let userUpdated;
 
@@ -15,7 +14,6 @@ fetch('/api/v1/verify')
         };
         renderData(currentUser);
     });
-
 
 const logout = () => {
     fetch('/api/v1/logout', {
@@ -93,7 +91,6 @@ const showMsg = () => {
 // -------------------------- DELETE USER PROFILE
 
 const deleteUserBtn = document.getElementById("deleteProfile");
-
 
 deleteUserBtn.addEventListener('click', (event) => {
     let userId = localStorage.getItem('userId');

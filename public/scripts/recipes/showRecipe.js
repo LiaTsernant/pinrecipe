@@ -207,7 +207,6 @@ function setDescription(description) {
 
 //-------------------------------------------------------------------------------- SET LINK
 
-
 function provideHowToCookLink(strLink) {
     const howToCook = document.getElementById('link');
     howToCook.setAttribute('href', strLink);
@@ -283,7 +282,6 @@ reviewForm.addEventListener('submit', (event) => {
     };
 });
 
-
 //------------------------------------------------------------------------------------------------- EDIT REVIEW (MODAL)
 
 function editReview(event) {
@@ -330,7 +328,6 @@ updateForm.addEventListener('submit', function (event) {
 });
 
 //------------------------------------------------------------------------------------------------- EDIT REVIEW (MODAL)
-
 
 function deleteReview(event) {
     if (event.target.classList.contains('delete-review')) {
@@ -387,7 +384,6 @@ function copyToClipboard(str) {
     // Remove child from <body>
     document.body.removeChild(el);
 };
-
 
 const logout = () => {
     fetch('/api/v1/logout', {

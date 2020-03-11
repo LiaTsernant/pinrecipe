@@ -7,7 +7,6 @@ const session = require('express-session');
 // Ask again what it does
 const MongoStore = require('connect-mongo')(session);
 
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -34,11 +33,9 @@ app.use(session({
     },
 }));
 
-// -------------------- VIEW ROUTES
+//--------------------------------------------------------------VIEW ROUTES
 
-//--------------------------------------------------------------RECIPE VIEWS
-
-// // testing view routes
+// INDEX recipe
 app.get('/', (req, res) => {
     res.sendFile('views/index.html', {
         root: __dirname
@@ -114,7 +111,6 @@ app.get('/register', (req, res) => {
 // -------------------- API RECIPE ROUTES
 
 // GET recipes index
-
 app.get('/api/v1/recipes', (req, res) => {
     db.Recipe.find({})
         .populate('reviews.user', 'firstName lastName _id')
@@ -126,7 +122,6 @@ app.get('/api/v1/recipes', (req, res) => {
 });
 
 // GET recipe show
-
 app.get('/api/v1/recipes/:id', (req, res) => {
     db.Recipe.findById(req.params.id, (err, foundRecipe) => {
         if (err) return res.status(404).json({ status: 404, error: 'Cannot find one recipe.' })
@@ -136,7 +131,6 @@ app.get('/api/v1/recipes/:id', (req, res) => {
 });
 
 // POST recipe create
-
 app.post('/api/v1/recipes', (req, res) => {
 
     db.Recipe.create(req.body, (err, newRecipe) => {
@@ -321,7 +315,6 @@ app.delete('/api/v1/users/:id', (req, res) => {
 // ---------------------------------------------- AUTH ROUTES
 
 // User Register
-
 app.post('/api/v1/register', (req, res) => {
     db.User.findOne({ email: req.body.email }, (err, foundUser) => {
         if (err) return res.status(400).json({
@@ -375,9 +368,8 @@ app.post('/api/v1/register', (req, res) => {
     });
 });
 
-// *************************************************************************  USER LOGIN
+// ---------------------------------------------- USER LOGIN
 app.post('/api/v1/login', (req, res) => {
-
     // Find user by email
     db.User.findOne({ email: req.body.email }, (err, foundUser) => {
         if (err) return res.status(400).json({ status: 400, error: "Something went wrong, please try again" });
@@ -410,7 +402,6 @@ app.post('/api/v1/login', (req, res) => {
     })
 })
 
-
 app.get('/api/v1/verify', (req, res) => {
     if (req.session.currentUser) {                
         return res.json({
@@ -423,7 +414,7 @@ app.get('/api/v1/verify', (req, res) => {
     res.status(401).json({ status: 401, error: 'Unauthorized, please login and try again' });
 });
 
-// *************************************************************************  USER LOGOUT
+// ----------------------------------------------  USER LOGOUT
 
 app.delete('/api/v1/logout', (req, res) => {
     if (!req.session.currentUser) {
@@ -439,10 +430,7 @@ app.delete('/api/v1/logout', (req, res) => {
         });
         res.json({status: 200, message: "User has logged out."});
     });
-});
-
-//********************************************************************************* 
-
+}); 
 
 // ----------------- VIEW ROUTES
 

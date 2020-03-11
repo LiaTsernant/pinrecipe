@@ -1,214 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!-- ICONS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <!-- CUSTOM JS -->
+        <script defer src="/scripts/recipes/showRecipe.js"></script>
+        <!-- CUSTOM CSS -->
+        <link rel="stylesheet" href="/styles/recipe/showRecipe.css">
+        <title>Recipe Show</title>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <body>
+        <!-- NAVIGATION -->
+        <header>
+            <div class="bg-dark collapse" id="navbarHeader">
+                <div class="container">
+                    <div class="row nav justify-content-end">
+                        <div class="col-sm-4 py-4">
 
-    <!-- ICONS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+                            <!-- UNAUTHORIZED USER -->
+                            <div id="unauthorized">
+                            </div>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+                            <!-- AUTHORIZED USER -->
+                            <div id="authorized">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar navbar-dark bg-dark shadow-sm">
+                <div class="container d-flex justify-content-end">
+                    <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
+                        data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
 
-    <!-- CUSTOM JS -->
-    <script defer src="/scripts/recipes/showRecipe.js"></script>
-
-    <!-- CUSTOM CSS -->
-    <link rel="stylesheet" href="/styles/recipe/showRecipe.css">
-    <title>Recipe Show</title>
-</head>
-
-<body>
-    <!-- NAVIGATION -->
-    <header>
-        <div class="bg-dark collapse" id="navbarHeader">
+        <main>
+            <!-- PHOTO PLACEHOLDER -->
             <div class="container">
-                <div class="row nav justify-content-end">
-                    <div class="col-sm-4 py-4">
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <div class="card">
 
-                        <!-- UNAUTHORIZED USER -->
-                        <div id="unauthorized">
-                            <!-- <h4 class="text-white nav justify-content-end mb-3">
-                                <a href="/">Main Page</a>
-                            </h4>
+                            <!-- PHOTO -->
+                            <img src="" id="photo" class="card-img-top" alt="...">
 
-                            <h4 class="text-white nav justify-content-end mb-3">
-                                <a href="/login" id="login">Login</a>
-                            </h4>
-
-                            <h4 class="text-white nav justify-content-end mb-3">
-                                <a href="/register" id="register">Create Account</a>
-                            </h4> -->
-                        </div>
-
-                        <!-- AUTHORIZED USER -->
-                        <div id="authorized">
-                            <!-- <h4 class="text-white nav justify-content-end mb-3">
-                                <a href="/">Main Page</a>
-                            </h4>
-                            <h4 class="text-white nav justify-content-end mb-3">
-                                <a href="/user/profile">Profile</a>
-                            </h4>
-                            <ul class="list-unstyled">
-                                <li class="nav-item nav justify-content-end"><a href="/breakfast"
-                                        class="text-white">Breakfast</a>
+                            <!-- DETAILS PLACEHOLDER-->
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item" id="time"></li>
+                                <li class="list-group-item" id="calories"></li>
+                                <li class="list-group-item">
+                                    <i id="popover" class="fa" data-toggle="popover" title="Copied!"
+                                        data-content="Look! I found an AWESOME recipe! ...Link..."
+                                        style="font-size:24px">&#xf1e0;</i>
+                                    Share with friends
                                 </li>
-                                <li class="nav-item nav justify-content-end"><a href="/lunch"
-                                        class="text-white">Lunch</a></li>
-                                <li class="nav-item nav justify-content-end"><a href="/dinner"
-                                        class="text-white">Dinner</a></li>
-                                <li class="nav-item nav justify-content-end"><a href="/dessert"
-                                        class="text-white">Dessert</a></li>
-                                <li id= "logout" class="nav-item nav justify-content-end mt-2"><a href="/login"
-                                        class="text-white font-weight-bold">Log Out</a></li>
-                            </ul> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-            <div class="container d-flex justify-content-end">
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse"
-                    data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <!-- PHOTO PLACEHOLDER -->
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 mt-5">
-                    <div class="card">
-
-                        <!-- PHOTO -->
-                        <img src="" id="photo" class="card-img-top" alt="...">
-
-                        <!-- DETAILS PLACEHOLDER-->
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item" id="time"></li>
-                            <li class="list-group-item" id="calories"></li>
-                            <li class="list-group-item">
-                                <i id="popover" class="fa" data-toggle="popover" title="Copied!"
-                                    data-content="Look! I found an AWESOME recipe! ...Link..."
-                                    style="font-size:24px">&#xf1e0;</i>
-                                Share with friends
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- INGREDIENTS PLACEHOLDER-->
-                <div class="col-md-6 mt-5">
-                    <div class="text-center">
-                        <h2>Ingredients</h2>
-                        <ul class="text-left" id="ingredients"></ul>
-
-                        <!-- DESCRIPTION PLACEHOLDER -->
-                        <h2 class="mt-4">Description</h2>
-                        <p id="description"></p>
-
-                        <!-- LINK TO THE SOURCE -->
-                        <h2 class="mt-4">How to cook</h2>
-                        <a href="#" id="link">Click here to see all steps</a>
-
-                        <!-- Reviews -->
-                        <div class="mt-4" id="reviews">
-                            <button type="button" class="btn btn-secondary " data-toggle="modal"
-                                data-target="#reviewModal" data-address="review">
-                                Write a review
-                            </button>
-
-                            <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4>Share your experience</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form id="review-modal">
-                                                <div class="form-group">
-                                                    <label for="message-text" class="col-form-label">Message:</label>
-                                                    <textarea class="form-control" id="review-text"></textarea>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="submit" class="btn btn-primary">Add</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- MODAL FOR UPDATING REVIEW -->
-
-                            <div class="modal fade" id="updateReviewModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4>Update your review</h4>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form id="update-review-modal">
-                                                <div class="form-group">
-                                                    <label for="message-text" class="col-form-label">Message:</label>
-                                                    <textarea class="form-control" id="update-review-text"></textarea>
-                                                    <input type="hidden" id="update-review-modal-review-id"
-                                                        name="reviewId" value="">
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button id="submit-changes" type="submit"
-                                                        class="btn btn-primary">Update</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul class="text-left mt-5" id="reviewsUl">
                             </ul>
                         </div>
                     </div>
+
+                    <!-- INGREDIENTS PLACEHOLDER-->
+                    <div class="col-md-6 mt-5">
+                        <div class="text-center">
+                            <h2>Ingredients</h2>
+                            <ul class="text-left" id="ingredients"></ul>
+
+                            <!-- DESCRIPTION PLACEHOLDER -->
+                            <h2 class="mt-4">Description</h2>
+                            <p id="description"></p>
+
+                            <!-- LINK TO THE SOURCE -->
+                            <h2 class="mt-4">How to cook</h2>
+                            <a href="#" id="link">Click here to see all steps</a>
+
+                            <!-- Reviews -->
+                            <div class="mt-4" id="reviews">
+                                <button type="button" class="btn btn-secondary " data-toggle="modal"
+                                    data-target="#reviewModal" data-address="review">
+                                    Write a review
+                                </button>
+
+                                <div class="modal fade" id="reviewModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Share your experience</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="review-modal">
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Message:</label>
+                                                        <textarea class="form-control" id="review-text"></textarea>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Add</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- MODAL FOR UPDATING REVIEW -->
+
+                                <div class="modal fade" id="updateReviewModal" tabindex="-1" role="dialog"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h4>Update your review</h4>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form id="update-review-modal">
+                                                    <div class="form-group">
+                                                        <label for="message-text" class="col-form-label">Message:</label>
+                                                        <textarea class="form-control" id="update-review-text"></textarea>
+                                                        <input type="hidden" id="update-review-modal-review-id"
+                                                            name="reviewId" value="">
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button id="submit-changes" type="submit"
+                                                            class="btn btn-primary">Update</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <ul class="text-left mt-5" id="reviewsUl">
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </main>
+        </main>
 
-    <footer>
-        <p class="copyright">&copy; 2020 Pinrecipe</p>
-    </footer>
-</body>
+        <footer>
+            <p class="copyright">&copy; 2020 Pinrecipe</p>
+        </footer>
+    </body>
 
-<!-- Bootstrap JS -->
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
-</body>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    </body>
 
 </html>

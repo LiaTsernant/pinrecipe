@@ -1,7 +1,5 @@
-
 // gets register form
 const registerForm = document.getElementById('registerForm');
-
 registerForm.addEventListener('submit', handleRegister);
 
 function handleRegister (event) {
