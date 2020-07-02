@@ -278,9 +278,7 @@ const logout = () => {
     });
 };
 
-
 // ------------------------ SHOW ADD RECIPE BUTTON ONLY IF USER IS LOGGED IN
-
 
 fetch('/api/v1/verify')
     .then((res) => res.json())
@@ -299,5 +297,4 @@ fetch('/api/v1/verify')
             $('[data-toggle="tooltip"]').tooltip();
         }
     });
-
-
+    
